@@ -1,6 +1,6 @@
 # Imag-IQ — AI-Powered Quiz Builder
 
-A Flutter web app where teachers create quizzes and students take them with AI-powered learning feedback. Built as a prototype for the Imagi Product Development Internship.
+A Flutter web app where teachers create quizzes and students take them with AI-powered learning feedback.
 
 ## Quick Start
 
@@ -36,7 +36,7 @@ An API key is included in `.env` for evaluation convenience — it has strict sp
 1. When a teacher clicks "Generate Questions" — creates quiz content
 2. When a student clicks "Practice this" — creates follow-up practice
 
-The wrong-answer explanations follow Imagi's "guide, don't tell" philosophy: they explain the misconception behind each wrong choice without revealing the correct answer. These explanations are generated alongside the questions themselves, so when a student sees their results, the feedback is **instant** — no API call needed.
+The wrong-answer explanations explain the misconception behind each wrong choice without simply revealing the correct answer. These explanations are generated alongside the questions themselves, so when a student sees their results, the feedback is **instant** — no API call needed.
 
 **Why this matters:** Most quiz apps treat AI as a grading add-on. Imag-IQ treats it as a content generation system that creates the entire learning loop — questions, distractors, and targeted feedback — in one step.
 
