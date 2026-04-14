@@ -300,7 +300,7 @@ class _TeacherHomeState extends State<TeacherHome> {
                                           CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          quiz.title,
+                                          quiz.displayTitle,
                                           maxLines: 2,
                                           overflow: TextOverflow.ellipsis,
                                           style: const TextStyle(
@@ -308,7 +308,9 @@ class _TeacherHomeState extends State<TeacherHome> {
                                             fontWeight: FontWeight.w900,
                                           ),
                                         ),
-                                        if (quiz.topic.trim().isNotEmpty) ...[
+                                        if (quiz.topic.trim().isNotEmpty &&
+                                            quiz.displayTitle !=
+                                                quiz.topic.trim()) ...[
                                           const SizedBox(height: 6),
                                           Text(
                                             quiz.topic,
@@ -380,10 +382,9 @@ class _TeacherHomeState extends State<TeacherHome> {
   }
 
   Widget _buildCreateCard() {
-    return InkWell(
+    return GestureDetector(
       onTap: () => _createNewQuiz(context),
-      borderRadius: BorderRadius.circular(24),
-      child: Ink(
+      child: Container(
         decoration: BoxDecoration(
           color: AppColors.blue,
           borderRadius: BorderRadius.circular(24),
@@ -438,10 +439,9 @@ class _TeacherHomeState extends State<TeacherHome> {
   }
 
   Widget _buildLandingQuizCard(Quiz quiz) {
-    return InkWell(
+    return GestureDetector(
       onTap: () => setState(() => _selectedQuizId = quiz.id),
-      borderRadius: BorderRadius.circular(24),
-      child: Ink(
+      child: Container(
         decoration: BoxDecoration(
           color: AppColors.white,
           borderRadius: BorderRadius.circular(24),
@@ -464,7 +464,7 @@ class _TeacherHomeState extends State<TeacherHome> {
                 children: [
                   Expanded(
                     child: Text(
-                      quiz.title,
+                      quiz.displayTitle,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                       style: const TextStyle(
@@ -498,7 +498,8 @@ class _TeacherHomeState extends State<TeacherHome> {
                   ),
                 ],
               ),
-              if (quiz.topic.trim().isNotEmpty) ...[
+              if (quiz.topic.trim().isNotEmpty &&
+                  quiz.displayTitle != quiz.topic.trim()) ...[
                 const SizedBox(height: 10),
                 Text(
                   quiz.topic,

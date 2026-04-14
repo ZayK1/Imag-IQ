@@ -5,21 +5,14 @@ A Flutter web app where teachers create quizzes and students take them with AI-p
 ## Quick Start
 
 ```bash
-# 1) Add `.env` in the Imag-IQ project root
-OPENROUTER_API_KEY=your_key_here
-OPENROUTER_MODEL=moonshotai/kimi-k2.5
-
-# 2) Install packages
+# 1) Install packages
 flutter pub get
 
-# 3) Optional: verify OpenRouter before launching the UI
-dart run tool/openrouter_smoke.dart
-
-# 4) Launch
+# 2) Launch
 flutter run -d chrome
 ```
 
-Get an API key at [openrouter.ai](https://openrouter.ai). For this prototype the key is loaded from the Imag-IQ project `.env`.
+An API key is included in `.env` for evaluation convenience. For production, this would be loaded from environment variables.
 
 ## What It Does
 
@@ -68,7 +61,7 @@ lib/
 - **In-memory state** — no backend, no database. One seeded "Python Basics" quiz so the app is demo-ready immediately.
 - **IndexedStack** for role switching — teacher drafts persist when switching to student view and back.
 - **Project-level `.env`** — simplest way to run the prototype with OpenRouter locally.
-- **OpenRouter** with `moonshotai/kimi-k2.5` — shared across teacher drafting and student follow-up practice.
+- **OpenRouter** with `openai/gpt-4o-mini` — shared across teacher drafting and student follow-up practice.
 
 ## What I'd Build With More Time
 
@@ -86,5 +79,5 @@ lib/
 
 - Flutter 3.41 (Web)
 - Provider for state management
-- OpenRouter API (MoonshotAI Kimi K2.5)
+- OpenRouter API (OpenAI GPT-4o Mini)
 - Google Fonts (Space Grotesk)

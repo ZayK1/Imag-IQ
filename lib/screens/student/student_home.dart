@@ -195,7 +195,7 @@ class _QuizPickerCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      quiz.title,
+                      quiz.displayTitle,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                       style: const TextStyle(
@@ -210,7 +210,8 @@ class _QuizPickerCard extends StatelessWidget {
                       spacing: 8,
                       runSpacing: 8,
                       children: [
-                        if (quiz.topic.trim().isNotEmpty)
+                        if (quiz.topic.trim().isNotEmpty &&
+                            quiz.displayTitle != quiz.topic.trim())
                           StatusChip(
                             label: quiz.topic,
                             icon: Icons.book_outlined,

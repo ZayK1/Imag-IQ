@@ -80,6 +80,8 @@ class QuizQuestion {
 }
 
 class Quiz {
+  static const placeholderTitle = 'Untitled Quiz';
+
   final String id;
   final String title;
   final String topic;
@@ -95,6 +97,21 @@ class Quiz {
     required this.questions,
     DateTime? createdAt,
   }) : createdAt = createdAt ?? DateTime.now();
+
+  bool get hasPlaceholderTitle {
+    final trimmed = title.trim();
+    return trimmed.isEmpty || trimmed == placeholderTitle;
+  }
+
+  String get displayTitle {
+    final trimmedTopic = topic.trim();
+    if (hasPlaceholderTitle && trimmedTopic.isNotEmpty) {
+      return trimmedTopic;
+    }
+
+    final trimmedTitle = title.trim();
+    return trimmedTitle.isEmpty ? placeholderTitle : trimmedTitle;
+  }
 
   Quiz copyWith({
     String? title,

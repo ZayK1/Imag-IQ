@@ -127,7 +127,7 @@ class _TakeQuizScreenState extends State<TakeQuizScreen> {
           const SizedBox(width: 14),
           Expanded(
             child: Text(
-              quiz.title,
+              quiz.displayTitle,
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
               style: const TextStyle(
@@ -192,7 +192,7 @@ class _TakeQuizScreenState extends State<TakeQuizScreen> {
                     ),
                     const SizedBox(height: 18),
                     Text(
-                      quiz.title,
+                      quiz.displayTitle,
                       textAlign: TextAlign.center,
                       style: const TextStyle(
                         fontSize: 34,
@@ -308,7 +308,7 @@ class _TakeQuizScreenState extends State<TakeQuizScreen> {
                       children: [
                         Expanded(
                           child: Text(
-                            quiz.title,
+                            quiz.displayTitle,
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
                             style: const TextStyle(
@@ -864,7 +864,7 @@ class _TakeQuizScreenState extends State<TakeQuizScreen> {
 
     try {
       final questions = await AiService.generateQuestions(
-        topic: quiz.topic.isEmpty ? quiz.title : quiz.topic,
+        topic: quiz.topic.isEmpty ? quiz.displayTitle : quiz.topic,
         focusArea: quiz.focusArea,
         count: 1,
       );
