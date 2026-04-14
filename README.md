@@ -5,14 +5,18 @@ A Flutter web app where teachers create quizzes and students take them with AI-p
 ## Quick Start
 
 ```bash
-# 1) Install packages
+# 1) Create a .env file in the project root
+OPENROUTER_API_KEY=your_key_here
+OPENROUTER_MODEL=openai/gpt-4o-mini
+
+# 2) Install packages
 flutter pub get
 
-# 2) Launch
+# 3) Launch
 flutter run -d chrome
 ```
 
-An API key is included in `.env` for evaluation convenience — it has strict spending limits and will be revoked after review. In production, secrets would never be committed; they'd be injected via environment variables or a secrets manager.
+Get a free API key at [openrouter.ai](https://openrouter.ai) (takes ~30 seconds). The AI features (question generation + practice questions) require a valid key. The rest of the app works without one.
 
 ## What It Does
 
