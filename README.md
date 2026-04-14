@@ -12,7 +12,7 @@ flutter pub get
 flutter run -d chrome
 ```
 
-An API key is included in `.env` for evaluation convenience. For production, this would be loaded from environment variables.
+An API key is included in `.env` for evaluation convenience — it has strict spending limits and will be revoked after review. In production, secrets would never be committed; they'd be injected via environment variables or a secrets manager.
 
 ## What It Does
 
